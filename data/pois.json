@@ -4,18 +4,27 @@
     "name": "Fontaine publique (Toulouse)",
     "category": "eau",
     "lat": 43.6045, "lng": 1.4440,
-    "description": "Point d'eau potable public au centre-ville. Idéal pour remplir les gourdes avant le départ.",
+    "description": "Point d'eau potable public au centre-ville. Idéal pour remplir les gourdes.",
     "recommendedTime": "15 min", "price": "Gratuit",
-    "tips": "Robinet à poussoir, prévoir un entonnoir pour les gros bidons.", "rules": "Pas de vaisselle ici."
+    "tips": "Robinet à poussoir, prévoir un entonnoir.", "rules": "Pas de vaisselle."
   },
   {
     "id": "park-tlse",
     "name": "Parking Pech David (Toulouse)",
     "category": "parkings",
     "lat": 43.5583, "lng": 1.4533,
-    "description": "Grand parking en terre avec une vue imprenable sur la ville et les Pyrénées.",
+    "description": "Grand parking en terre, vue imprenable sur la ville et les Pyrénées.",
     "recommendedTime": "Étape de nuit", "price": "Gratuit",
-    "tips": "Parfait pour une dernière nuit tranquille avant de passer la frontière.", "rules": "Zone naturelle, feux interdits."
+    "tips": "Parfait pour une dernière nuit tranquille avant le départ.", "rules": "Feux interdits."
+  },
+  {
+    "id": "act-carcassonne",
+    "name": "Cité de Carcassonne",
+    "category": "activites",
+    "lat": 43.2063, "lng": 2.3636,
+    "description": "Forteresse médiévale classée à l'UNESCO. Un incontournable si vous passez par l'Aude.",
+    "recommendedTime": "3h", "price": "Accès cité gratuit (Château payant)",
+    "tips": "Allez-y de nuit ou très tôt le matin pour la magie sans la foule.", "rules": "Parkings très chers pour les vans (P2)."
   },
   {
     "id": "rando-oo",
@@ -24,25 +33,52 @@
     "lat": 42.7667, "lng": 0.5042,
     "description": "Randonnée classique menant à un lac de montagne et sa grande cascade.",
     "recommendedTime": "3h (A/R)", "price": "Gratuit",
-    "tips": "Le parking des Granges d'Astau tolère souvent le stationnement nocturne en van.", "rules": "Baignade interdite."
+    "tips": "Le parking des Granges d'Astau tolère souvent le stationnement nocturne.", "rules": "Baignade interdite."
+  },
+  {
+    "id": "biv-bielsa",
+    "name": "Vallée de Pineta (Bielsa)",
+    "category": "bivouacs",
+    "lat": 42.6730, "lng": 0.0820,
+    "description": "Zone de camping municipal très sauvage au fond d'une vallée glaciaire spectaculaire.",
+    "recommendedTime": "Nuit", "price": "Env. 10€",
+    "tips": "Paysage digne du Seigneur des Anneaux juste après la frontière.", "rules": "Sanitaires basiques, zone protégée."
   },
   {
     "id": "shop-1",
     "name": "Mercadona (Huesca)",
     "category": "supermarches",
     "lat": 42.1350, "lng": -0.4089,
-    "description": "Dernière grande surface abordable avant de s'enfoncer dans les montagnes.",
+    "description": "Dernière grande surface abordable avant de s'enfoncer dans la Sierra.",
     "recommendedTime": "45 min", "price": "Prix espagnols",
-    "tips": "Faites le plein d'eau, de charcuterie et de fromage.", "rules": "Fermé le dimanche."
+    "tips": "Faites le plein d'eau, charcuterie et fromage.", "rules": "Fermé le dimanche."
   },
   {
-    "id": "astuce-guara",
-    "name": "Alternative Casa Rural (Adahuesca)",
-    "category": "astuces",
-    "lat": 42.1430, "lng": -0.0070,
-    "description": "En cas de mauvais temps, ce village propose d'excellentes chambres d'hôtes (Casas Rurales) sur Airbnb.",
-    "recommendedTime": "1 à 2 nuits", "price": "50-80€/nuit",
-    "tips": "Moins cher et plus authentique qu'Alquézar. Cherchez 'Casa Rural Adahuesca'.", "rules": "N/A"
+    "id": "act-loarre",
+    "name": "Castillo de Loarre",
+    "category": "activites",
+    "lat": 42.3275, "lng": -0.6116,
+    "description": "Le château roman le mieux conservé d'Europe (décor du film Kingdom of Heaven).",
+    "recommendedTime": "2h", "price": "6€",
+    "tips": "Le parking en bas offre une vue dingue sur la plaine de Huesca.", "rules": "N/A"
+  },
+  {
+    "id": "rando-riglos",
+    "name": "Mallos de Riglos",
+    "category": "randonnees",
+    "lat": 42.3490, "lng": -0.7250,
+    "description": "Randonnée mythique sous des falaises de conglomérat rouge géantes, royaume des vautours.",
+    "recommendedTime": "3h", "price": "Gratuit",
+    "tips": "Faites le sentier 'Camino del Cielo' (Le chemin du ciel). Vertigineux !", "rules": "Chaleur mortelle l'été en plein jour."
+  },
+  {
+    "id": "swim-pozan",
+    "name": "Salto de Pozán de Vero",
+    "category": "baignades",
+    "lat": 42.0833, "lng": 0.0250,
+    "description": "Alternative moins connue au Salto de Bierge. Jolie cascade et bassin naturel.",
+    "recommendedTime": "2h", "price": "Gratuit",
+    "tips": "L'accès se fait par un petit chemin de terre près d'un vieux pont.", "rules": "Respectez la tranquillité des pêcheurs."
   },
   {
     "id": "wc-alquezar",
@@ -51,7 +87,7 @@
     "lat": 42.1725, "lng": 0.0260,
     "description": "Bloc sanitaire à l'entrée du village et point d'eau discret au cimetière.",
     "recommendedTime": "10 min", "price": "Gratuit",
-    "tips": "Remplissez vos bidons au robinet extérieur du cimetière.", "rules": "Lieu de recueillement, silence de rigueur."
+    "tips": "Remplissez vos bidons au robinet du cimetière.", "rules": "Silence de rigueur."
   },
   {
     "id": "rando-vero",
@@ -60,61 +96,52 @@
     "lat": 42.1722, "lng": 0.0264,
     "description": "Randonnée spectaculaire sur des passerelles métalliques accrochées à la falaise.",
     "recommendedTime": "2h30", "price": "4€",
-    "tips": "Commencez avant 9h en été pour éviter la foule et la chaleur.", "rules": "Chaussures fermées obligatoires."
+    "tips": "Commencez avant 9h en été pour éviter la foule.", "rules": "Chaussures fermées obligatoires."
   },
   {
     "id": "camp-puente",
-    "name": "Camping El Puente (Sierra de Guara)",
+    "name": "Camping El Puente (Guara)",
     "category": "campings",
     "lat": 42.2289, "lng": -0.0150,
-    "description": "Camping familial et ombragé, situé au bord de la rivière Alcanadre.",
-    "recommendedTime": "2-3 jours", "price": "Environ 25€/nuit",
-    "tips": "Plage privée sur la rivière. Réservation requise en août.", "rules": "Feux de camp strictement interdits."
-  },
-  {
-    "id": "camp-alquezar",
-    "name": "Camping Alquézar",
-    "category": "campings",
-    "lat": 42.1760, "lng": 0.0220,
-    "description": "Situé dans une forêt de chênes, juste au-dessus du village médiéval.",
-    "recommendedTime": "Nuit", "price": "28€",
-    "tips": "Prévoyez des cales, le terrain est en pente.", "rules": "N/A"
+    "description": "Camping familial ombragé, au bord de la rivière Alcanadre.",
+    "recommendedTime": "2-3 jours", "price": "25€/nuit",
+    "tips": "Plage privée sur la rivière. Bon camp de base.", "rules": "Feux de camp strictement interdits."
   },
   {
     "id": "act-canyon",
     "name": "Canyoning Rio Formiga",
     "category": "activites",
     "lat": 42.2230, "lng": -0.0930,
-    "description": "L'un des canyons les plus ludiques de la région.",
+    "description": "L'un des canyons les plus ludiques de la région (toboggans naturels, sauts).",
     "recommendedTime": "Demi-journée", "price": "45€ (avec guide)",
-    "tips": "Garez-vous au parking Cueva de las Polvorosas. Guide conseillé.", "rules": "Météo à vérifier impérativement."
+    "tips": "Guide conseillé si non autonome.", "rules": "Météo à vérifier impérativement (crues éclair)."
   },
   {
-    "id": "swim-1",
+    "id": "swim-bierge",
     "name": "Salto de Bierge",
     "category": "baignades",
     "lat": 42.1645, "lng": -0.0847,
     "description": "Grand barrage formant une cascade avec des bassins d'eau cristalline.",
     "recommendedTime": "2h", "price": "3€ l'été",
-    "tips": "L'eau est à 15°C même en plein mois d'août.", "rules": "Sauts depuis le barrage formellement interdits."
+    "tips": "L'eau est à 15°C même en août.", "rules": "Sauts depuis le barrage formellement interdits."
   },
   {
-    "id": "resto-1",
+    "id": "astuce-belchite",
+    "name": "Village fantôme de Belchite",
+    "category": "activites",
+    "lat": 41.3033, "lng": -0.7500,
+    "description": "Détour au sud de Saragosse : ruines glaçantes d'un village détruit pendant la Guerre Civile.",
+    "recommendedTime": "2h", "price": "8€ (visite guidée)",
+    "tips": "Ambiance post-apocalyptique incroyable au coucher du soleil.", "rules": "Entrée libre interdite, visite guidée obligatoire pour sécurité."
+  },
+  {
+    "id": "resto-tubo",
     "name": "Quartier El Tubo (Saragosse)",
     "category": "restaurants",
     "lat": 41.6521, "lng": -0.8804,
     "description": "Le cœur gastronomique de Saragosse. Un dédale de bars à tapas historiques.",
     "recommendedTime": "Soirée", "price": "20-30€",
-    "tips": "Prenez une bière (caña) et une tapa par bar, puis changez d'endroit.", "rules": "Attention aux pickpockets."
-  },
-  {
-    "id": "act-aljaferia",
-    "name": "Palais de la Aljafería (Saragosse)",
-    "category": "activites",
-    "lat": 41.6565, "lng": -0.8970,
-    "description": "Superbe palais islamique fortifié, témoin de l'époque d'Al-Andalus.",
-    "recommendedTime": "2h", "price": "5€",
-    "tips": "Gratuit le dimanche (réservation en ligne obligatoire).", "rules": "N/A"
+    "tips": "Changez de bar à chaque nouvelle tapa.", "rules": "Attention aux pickpockets."
   },
   {
     "id": "park-zgz",
@@ -123,7 +150,7 @@
     "lat": 41.6580, "lng": -0.8750,
     "description": "Parking en terre au bord de l'Èbre, face à la Basilique.",
     "recommendedTime": "Journée / Nuit", "price": "Gratuit",
-    "tips": "Bruyant mais emplacement imbattable pour visiter à pied.", "rules": "Toléré, mais aucun déballage extérieur."
+    "tips": "Emplacement imbattable pour visiter à pied.", "rules": "Toléré, mais aucun déballage extérieur."
   },
   {
     "id": "camp-zgz",
@@ -132,7 +159,7 @@
     "lat": 41.6360, "lng": -0.9380,
     "description": "Grand camping de ville, idéal pour sécuriser le véhicule.",
     "recommendedTime": "Nuit", "price": "22€",
-    "tips": "Un bus direct pour le centre-ville passe juste devant.", "rules": "N/A"
+    "tips": "Bus direct pour le centre-ville juste devant.", "rules": "N/A"
   },
   {
     "id": "biv-monegros1",
@@ -140,8 +167,8 @@
     "category": "bivouacs",
     "lat": 41.6111, "lng": -0.1255,
     "description": "Bivouac lunaire au milieu du désert, entouré de cheminées de fées.",
-    "recommendedTime": "Nuit entière", "price": "Gratuit",
-    "tips": "Aucune ombre et pas de réseau. Arrivez pour le coucher du soleil.", "rules": "Ramenez 100% de vos déchets."
+    "recommendedTime": "Nuit", "price": "Gratuit",
+    "tips": "Aucune ombre. Arrivez pour le coucher du soleil.", "rules": "Ramenez 100% de vos déchets."
   },
   {
     "id": "biv-monegros2",
@@ -150,7 +177,16 @@
     "lat": 41.7220, "lng": -0.2740,
     "description": "Le point culminant des Monegros. Grottes creusées et vue incroyable.",
     "recommendedTime": "Nuit", "price": "Gratuit",
-    "tips": "La piste finale est très raide, montez doucement.", "rules": "Lieu de culte et d'ermitage, silence absolu."
+    "tips": "La piste finale est très raide.", "rules": "Silence absolu (ermitage)."
+  },
+  {
+    "id": "rando-montrebei",
+    "name": "Congost de Mont-rebei",
+    "category": "randonnees",
+    "lat": 42.0833, "lng": 0.6833,
+    "description": "Détour MAJEUR : Gorges vertigineuses taillées dans la roche, sentier creusé à flanc de falaise.",
+    "recommendedTime": "4-5h", "price": "Parking 10€",
+    "tips": "Réservez le parking 'La Masieta' à l'avance. Possibilité de louer des kayaks en bas.", "rules": "Déconseillé aux personnes souffrant du vertige."
   },
   {
     "id": "gas-bujaraloz",
@@ -159,7 +195,7 @@
     "lat": 41.4980, "lng": -0.1550,
     "description": "Souvent la station-service la moins chère d'Aragon.",
     "recommendedTime": "15 min", "price": "Avantageux",
-    "tips": "Automate 24/24, parfait en sortant du désert.", "rules": "N/A"
+    "tips": "Automate 24/24.", "rules": "N/A"
   },
   {
     "id": "camp-montserrat",
@@ -171,58 +207,86 @@
     "tips": "Parfait pour attaquer la montée au monastère le lendemain matin.", "rules": "N/A"
   },
   {
-    "id": "view-montserrat",
-    "name": "Mirador de Sant Jeroni (Montserrat)",
-    "category": "points-de-vue",
-    "lat": 41.5932, "lng": 1.8315,
-    "description": "Le sommet du massif (1236m). Vue plongeante sur la Catalogne.",
-    "recommendedTime": "3h (A/R)", "price": "Gratuit",
-    "tips": "Prenez le funiculaire de Sant Joan pour diviser le dénivelé par deux.", "rules": "Restez sur les sentiers balisés."
+    "id": "act-montserrat",
+    "name": "Monastère de Montserrat",
+    "category": "activites",
+    "lat": 41.5933, "lng": 1.8375,
+    "description": "Abbaye bénédictine accrochée à la montagne, abritant la Vierge Noire.",
+    "recommendedTime": "2h", "price": "Payant pour la Vierge",
+    "tips": "Écoutez la chorale des garçons (Escolania) à 13h.", "rules": "Parking très raide et cher en haut, privilégiez le train à crémaillère depuis Monistrol."
   },
   {
     "id": "astuce-bcn",
-    "name": "Astuce Airbnb (Barcelone)",
+    "name": "Astuce Airbnb & Sécurité (Barcelone)",
     "category": "astuces",
     "lat": 41.3850, "lng": 2.1730,
     "description": "Barcelone est la capitale du vol dans les vans. Ne dormez pas dans la rue.",
     "recommendedTime": "2 nuits", "price": "Variables",
-    "tips": "Prenez un Airbnb (ex: quartier de Gràcia) et garez le van dans un parking sécurisé souterrain (réseau B:SM).", "rules": "Ne laissez RIEN de visible dans le van."
+    "tips": "Prenez un Airbnb et garez le van dans un parking sécurisé souterrain (réseau B:SM).", "rules": "Ne laissez RIEN de visible dans le van, même en journée."
   },
   {
     "id": "act-sagrada",
     "name": "Sagrada Família (Barcelone)",
     "category": "activites",
     "lat": 41.4036, "lng": 2.1744,
-    "description": "Le chef-d'œuvre inachevé de Gaudí. Une basilique à l'architecture organique époustouflante.",
+    "description": "Chef-d'œuvre inachevé de Gaudí. Une basilique époustouflante.",
     "recommendedTime": "2h", "price": "~26€",
-    "tips": "Réservez vos billets coupe-file en ligne des semaines à l'avance. Le stationnement autour est impossible en van.", "rules": "Tenue correcte exigée (épaules et genoux couverts)."
+    "tips": "Réservez vos billets coupe-file des semaines à l'avance.", "rules": "Tenue correcte exigée (épaules/genoux couverts)."
   },
   {
     "id": "act-guell",
     "name": "Parc Güell (Barcelone)",
     "category": "activites",
     "lat": 41.4145, "lng": 2.1527,
-    "description": "Parc onirique conçu par Antoni Gaudí, avec ses mosaïques colorées et une vue panoramique sur Barcelone.",
+    "description": "Parc onirique de Gaudí, mosaïques et vue panoramique.",
     "recommendedTime": "2h", "price": "~10€",
-    "tips": "Allez-y très tôt le matin pour éviter la foule étouffante. Garez le van en périphérie et prenez le métro.", "rules": "Zone monumentale réglementée, respectez les mosaïques."
+    "tips": "Allez-y très tôt le matin pour éviter la foule.", "rules": "Zone monumentale réglementée."
   },
   {
-    "id": "park-bcn",
-    "name": "Parking Miramar (Montjuïc, BCN)",
-    "category": "parkings",
-    "lat": 41.3634, "lng": 2.1526,
-    "description": "Parking gratuit de jour sur les hauteurs de la ville.",
-    "recommendedTime": "Journée", "price": "Gratuit",
-    "tips": "Descendez en ville via le téléphérique ou à pied.", "rules": "Ouvrez vos rideaux pour montrer que le van est vide."
+    "id": "view-bunkers",
+    "name": "Bunkers del Carmel (Barcelone)",
+    "category": "points-de-vue",
+    "lat": 41.4190, "lng": 2.1610,
+    "description": "Le meilleur panorama 360° sur Barcelone depuis d'anciennes batteries anti-aériennes.",
+    "recommendedTime": "1h30", "price": "Gratuit",
+    "tips": "Magique au coucher du soleil avec une bière.", "rules": "Accès désormais régulé la nuit par la police."
   },
   {
     "id": "douche-bcn",
-    "name": "Douches Plage Barceloneta",
+    "name": "Douches Plage Bogatell (Barcelone)",
     "category": "douches",
-    "lat": 41.3784, "lng": 2.1925,
-    "description": "Douches extérieures sur la plage.",
-    "recommendedTime": "10 min", "price": "Gratuit",
-    "tips": "Parfait pour se rafraîchir après une marche étouffante.", "rules": "Interdiction stricte d'utiliser du savon/shampoing."
+    "lat": 41.3930, "lng": 2.2040,
+    "description": "Plage moins touristique que la Barceloneta avec douches en plein air.",
+    "recommendedTime": "1h", "price": "Gratuit",
+    "tips": "Parfait pour se rafraîchir après la visite de la ville.", "rules": "Interdiction stricte d'utiliser du savon."
+  }
+  ,
+  {
+    "id": "act-girona",
+    "name": "Centre Historique (Gérone)",
+    "category": "activites",
+    "lat": 41.9845, "lng": 2.8250,
+    "description": "Détour incontournable. Superbe quartier juif médiéval et lieux de tournage de Game of Thrones.",
+    "recommendedTime": "3h", "price": "Gratuit",
+    "tips": "Marchez sur les murailles de la ville (Passeig de la Muralla) pour une vue imprenable.", "rules": "Rues très étroites, garez-vous en périphérie."
+  },
+  {
+    "id": "park-girona",
+    "name": "Parking La Devesa (Gérone)",
+    "category": "parkings",
+    "lat": 41.9860, "lng": 2.8180,
+    "description": "Immense parking gratuit sous les platanes, près du parc de la Devesa.",
+    "recommendedTime": "Journée / Nuit", "price": "Gratuit",
+    "tips": "Toléré pour la nuit, à 10 min à pied du vieux Gérone.", "rules": "Fermé les jours de marché (mardi et samedi matin)."
+  },
+  {
+    "id": "act-tossa",
+    "name": "Castillo de Tossa de Mar",
+    "category": "activites",
+    "lat": 41.7166, "lng": 2.9333,
+    "description": "Magnifique citadelle fortifiée tombant à pic dans la mer Méditerranée.",
+    "recommendedTime": "2h", "price": "Gratuit",
+    "tips": "Détour parfait si vous longez la côte avant de remonter vers Roses.", "rules": "N/A"
   },
   {
     "id": "gas-jonquera",
@@ -231,7 +295,7 @@
     "lat": 42.4153, "lng": 2.8731,
     "description": "Complexe routier géant à la frontière. Dernier plein pas cher.",
     "recommendedTime": "20 min", "price": "Prix espagnols",
-    "tips": "Il y a aussi de grands supermarchés pour ramener des produits locaux.", "rules": "Zone de passage, fermez le véhicule à clé à la pompe."
+    "tips": "Faites le plein d'essence et de courses détaxées.", "rules": "Zone de passage intense, fermez le véhicule à clé à la pompe."
   },
   {
     "id": "act-dali",
@@ -240,7 +304,7 @@
     "lat": 42.2680, "lng": 2.9590,
     "description": "Plongée surréaliste et fascinante dans l'esprit de Salvador Dalí.",
     "recommendedTime": "3h", "price": "15€",
-    "tips": "Réservez vos billets en ligne longtemps à l'avance.", "rules": "Parking complexe en van au centre-ville."
+    "tips": "Réservez vos billets en ligne. Cherchez les parkings des supermarchés Esclat ou Mercadona en van.", "rules": "N/A"
   },
   {
     "id": "camp-cadaques",
@@ -249,16 +313,34 @@
     "lat": 42.2925, "lng": 3.2840,
     "description": "Petit camping pentu, le seul de la presqu'île de Cadaqués.",
     "recommendedTime": "1-2 nuits", "price": "35€",
-    "tips": "À 15 min à pied du village. Idéal pour sortir manger des tapas le soir.", "rules": "Difficile d'accès pour les camping-cars de plus de 6m."
+    "tips": "À 15 min à pied du village. Idéal pour sortir le soir.", "rules": "Difficile d'accès pour les camping-cars de plus de 6m."
+  },
+  {
+    "id": "act-portlligat",
+    "name": "Maison-Musée Dalí (Portlligat)",
+    "category": "activites",
+    "lat": 42.2933, "lng": 3.2863,
+    "description": "L'incroyable maison labyrinthe où Dali a vécu et travaillé.",
+    "recommendedTime": "1h30", "price": "15€",
+    "tips": "Réservation OBLIGATOIRE des mois à l'avance. Ponctualité stricte exigée.", "rules": "Sacs à dos interdits à l'intérieur."
+  },
+  {
+    "id": "rando-tudela",
+    "name": "Paratge de Tudela (Cap de Creus)",
+    "category": "randonnees",
+    "lat": 42.3275, "lng": 3.2980,
+    "description": "Randonnée incroyable dans des formations rocheuses qui ont inspiré les tableaux de Dali.",
+    "recommendedTime": "2h", "price": "Parking payant",
+    "tips": "Paysage irréel, sculpté par le vent de la Tramontane.", "rules": "Interdiction absolue de quitter les sentiers balisés."
   },
   {
     "id": "swim-creus",
-    "name": "Cala Pelosa (Cap de Creus)",
+    "name": "Cala Pelosa (Roses)",
     "category": "baignades",
     "lat": 42.2505, "lng": 3.2428,
-    "description": "Une crique de galets magnifique et abritée.",
+    "description": "Une crique de galets magnifique et abritée, eau turquoise.",
     "recommendedTime": "Demi-journée", "price": "Gratuit",
-    "tips": "Le Chiringuito sur la plage fait d'excellentes paellas. Piste d'accès en terre.", "rules": "Bivouac de nuit strictement réprimandé."
+    "tips": "Le Chiringuito sur la plage fait d'excellentes paellas. Piste d'accès en terre (roulez doucement).", "rules": "Bivouac de nuit strictement réprimandé."
   },
   {
     "id": "biv-capras",
@@ -267,7 +349,16 @@
     "lat": 42.3860, "lng": 3.1670,
     "description": "Zone en terre face à la mer, superbes criques pour le snorkeling juste en bas.",
     "recommendedTime": "Nuit", "price": "Gratuit",
-    "tips": "Spot très connu, souvent toléré hors juillet-août.", "rules": "Pas de cales, pas de chaises dehors."
+    "tips": "Spot très connu, souvent toléré hors juillet-août.", "rules": "Pas de cales, pas de chaises ou tables dehors."
+  },
+  {
+    "id": "swim-paulilles",
+    "name": "Anse de Paulilles (Port-Vendres)",
+    "category": "baignades",
+    "lat": 42.5005, "lng": 3.1110,
+    "description": "Ancienne dynamiterie réhabilitée en site naturel protégé, plages magnifiques et prairies sous-marines.",
+    "recommendedTime": "Demi-journée", "price": "Gratuit",
+    "tips": "Le parking ferme ses barrières le soir, impossible d'y dormir.", "rules": "Site classé Natura 2000."
   },
   {
     "id": "resto-collioure",
@@ -276,7 +367,7 @@
     "lat": 42.5255, "lng": 3.0825,
     "description": "Café-restaurant mythique. Les murs sont recouverts de milliers de toiles de maîtres.",
     "recommendedTime": "1h30", "price": "25-40€",
-    "tips": "Goûtez la spécialité : les anchois de Collioure.", "rules": "Centre-ville interdit aux vans."
+    "tips": "Goûtez la spécialité : les anchois de Collioure avec un verre de vin local.", "rules": "Centre-ville interdit aux vans."
   },
   {
     "id": "park-collioure",
@@ -285,7 +376,7 @@
     "lat": 42.5290, "lng": 3.0750,
     "description": "Parking à l'extérieur de la ville avec navettes.",
     "recommendedTime": "Journée", "price": "Forfait journée",
-    "tips": "C'est le seul moyen serein de visiter Collioure avec un gros véhicule.", "rules": "Navettes gratuites l'été."
+    "tips": "C'est le seul moyen serein de visiter Collioure avec un véhicule aménagé.", "rules": "Navettes gratuites l'été."
   },
   {
     "id": "camp-collioure",
@@ -294,7 +385,7 @@
     "lat": 42.5380, "lng": 3.0640,
     "description": "Camping haut de gamme perché sur les falaises de la Côte Vermeille.",
     "recommendedTime": "Nuit de luxe", "price": "45€+",
-    "tips": "Vue incroyable sur la Méditerranée depuis les emplacements.", "rules": "N/A"
+    "tips": "Vue incroyable sur la Méditerranée, plage privée.", "rules": "N/A"
   },
   {
     "id": "biv-ouillat",
@@ -303,7 +394,16 @@
     "lat": 42.4830, "lng": 2.9430,
     "description": "Parking en forêt dans le massif des Albères. Au frais sous les arbres.",
     "recommendedTime": "Nuit", "price": "Gratuit",
-    "tips": "Accès par une petite route sinueuse. Super départ de rando.", "rules": "Zone ONF, feu et barbecue formellement interdits."
+    "tips": "Départ de la rando vers le Pic du Néoulous (vue sur la France et l'Espagne).", "rules": "Zone ONF, feu et barbecue formellement interdits."
+  },
+  {
+    "id": "view-madeloc",
+    "name": "Tour de Madeloc",
+    "category": "points-de-vue",
+    "lat": 42.4908, "lng": 3.0747,
+    "description": "Ancienne tour à signaux perchée à 650m d'altitude, dominant toute la côte Vermeille.",
+    "recommendedTime": "2h", "price": "Gratuit",
+    "tips": "La dernière partie de la route est fermée, montez à pied (30 min intenses).", "rules": "Garez le van en contrebas sans gêner la circulation."
   },
   {
     "id": "wc-banyuls",
@@ -312,16 +412,34 @@
     "lat": 42.4820, "lng": 3.1290,
     "description": "Bloc sanitaire public entretenu par la capitainerie.",
     "recommendedTime": "5 min", "price": "Gratuit",
-    "tips": "Toujours pratique quand on longe la côte.", "rules": "Laissez propre."
+    "tips": "Toujours pratique quand on longe la côte sans WC fixes.", "rules": "Laissez propre."
   },
   {
     "id": "shop-argeles",
-    "name": "Hyper Intermarché (Argelès-sur-Mer)",
+    "name": "Hyper Intermarché (Argelès)",
     "category": "supermarches",
     "lat": 42.5480, "lng": 3.0150,
-    "description": "Grand supermarché français avec grand parking.",
+    "description": "Grand supermarché français avec grand parking adapté aux véhicules longs.",
     "recommendedTime": "30 min", "price": "Standard",
-    "tips": "Une laverie automatique (grosses machines) est disponible sur le parking extérieur.", "rules": "N/A"
+    "tips": "Laverie automatique (grosses machines) disponible sur le parking extérieur.", "rules": "N/A"
+  },
+  {
+    "id": "biv-leucate",
+    "name": "Falaise de Leucate",
+    "category": "bivouacs",
+    "lat": 42.9060, "lng": 3.0530,
+    "description": "Grand plateau herbeux dominant la mer, repaire célèbre de vanlifers.",
+    "recommendedTime": "Nuit", "price": "Gratuit",
+    "tips": "Vue spectaculaire au réveil. Chemin d'accès parfois raviné.", "rules": "Ne vous approchez pas trop du bord, risque d'éboulement."
+  },
+  {
+    "id": "resto-buffets",
+    "name": "Les Grands Buffets (Narbonne)",
+    "category": "restaurants",
+    "lat": 43.1740, "lng": 3.0180,
+    "description": "Le restaurant à volonté le plus célèbre de France (fromages, foie gras, fruits de mer, rôtisserie).",
+    "recommendedTime": "3h", "price": "~53€",
+    "tips": "Le Graal de la gastronomie. Réservation indispensable plusieurs mois à l'avance ou guettez les désistements le jour même.", "rules": "Tenue correcte exigée."
   },
   {
     "id": "biv-clape",
@@ -337,7 +455,7 @@
     "name": "Aire des Chalets (Gruissan)",
     "category": "parkings",
     "lat": 43.1030, "lng": 3.0950,
-    "description": "Aire de stationnement dédiée aux véhicules aménagés, derrière la plage des chalets.",
+    "description": "Aire de stationnement dédiée aux véhicules aménagés, derrière la plage des chalets (décor du film 37°2 le matin).",
     "recommendedTime": "Étape de nuit", "price": "9€ / 24h",
     "tips": "Services de vidange et remplissage d'eau inclus.", "rules": "Garez-vous face au vent s'il y a de la Tramontane."
   },
@@ -348,6 +466,15 @@
     "lat": 43.0980, "lng": 3.1000,
     "description": "Douches de plage en libre accès.",
     "recommendedTime": "10 min", "price": "Gratuit",
-    "tips": "Situées juste à côté du poste de secours principal.", "rules": "Rinçage à l'eau claire uniquement."
+    "tips": "Situées juste à côté du poste de secours principal.", "rules": "Rinçage à l'eau claire uniquement (pas de savon)."
+  },
+  {
+    "id": "astuce-canal",
+    "name": "Seuil de Naurouze / Canal du Midi",
+    "category": "astuces",
+    "lat": 43.3510, "lng": 1.8150,
+    "description": "Lieu de partage des eaux du Canal du Midi. Idéal pour une pause bucolique avant le retour à Toulouse.",
+    "recommendedTime": "1h", "price": "Gratuit",
+    "tips": "Promenade relaxante à l'ombre des platanes géants. Achetez un cassoulet à Castelnaudary juste à côté.", "rules": "N/A"
   }
 ]
