@@ -1,0 +1,28 @@
+[
+  {
+    "id": "resto-1",
+    "name": "Quartier El Tubo (Saragosse)",
+    "category": "restaurants",
+    "lat": 41.6521,
+    "lng": -0.8804,
+    "description": "Dédale de ruelles historiques au cœur de Saragosse, célèbre pour la tournée des tapas.",
+    "recommendedTime": "Soirée (à partir de 20h30)",
+    "price": "15-25€ par personne",
+    "tips": "Ne restez pas dans un seul bar : prenez une tapa et une boisson, puis changez d'établissement !",
+    "rules": "N/A",
+    "image": "assets/images/eltubo.jpg"
+  },
+  {
+    "id": "resto-2",
+    "name": "Les Templiers (Collioure)",
+    "category": "restaurants",
+    "lat": 42.5255,
+    "lng": 3.0825,
+    "description": "Institution mythique de Collioure avec des murs couverts de toiles de maîtres. Cuisine catalane.",
+    "recommendedTime": "1h30",
+    "price": "25-40€",
+    "tips": "Réservez absolument à l'avance. Goûtez les anchois locaux.",
+    "rules": "N/A",
+    "image": "assets/images/templiers.jpg"
+  }
+]
