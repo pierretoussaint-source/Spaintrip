@@ -189,6 +189,24 @@
     "tips": "Prenez un Airbnb (ex: quartier de Gràcia) et garez le van dans un parking sécurisé souterrain (réseau B:SM).", "rules": "Ne laissez RIEN de visible dans le van."
   },
   {
+    "id": "act-sagrada",
+    "name": "Sagrada Família (Barcelone)",
+    "category": "activites",
+    "lat": 41.4036, "lng": 2.1744,
+    "description": "Le chef-d'œuvre inachevé de Gaudí. Une basilique à l'architecture organique époustouflante.",
+    "recommendedTime": "2h", "price": "~26€",
+    "tips": "Réservez vos billets coupe-file en ligne des semaines à l'avance. Le stationnement autour est impossible en van.", "rules": "Tenue correcte exigée (épaules et genoux couverts)."
+  },
+  {
+    "id": "act-guell",
+    "name": "Parc Güell (Barcelone)",
+    "category": "activites",
+    "lat": 41.4145, "lng": 2.1527,
+    "description": "Parc onirique conçu par Antoni Gaudí, avec ses mosaïques colorées et une vue panoramique sur Barcelone.",
+    "recommendedTime": "2h", "price": "~10€",
+    "tips": "Allez-y très tôt le matin pour éviter la foule étouffante. Garez le van en périphérie et prenez le métro.", "rules": "Zone monumentale réglementée, respectez les mosaïques."
+  },
+  {
     "id": "park-bcn",
     "name": "Parking Miramar (Montjuïc, BCN)",
     "category": "parkings",
