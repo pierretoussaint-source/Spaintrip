@@ -494,5 +494,32 @@
     "description": "Ancienne cathédrale majestueuse juchée sur une colline dominant toute la ville, mêlant architecture romane et cloître gothique spectaculaire.",
     "recommendedTime": "1h30", "price": "7€",
     "tips": "Il y a un ascenseur public gratuit (depuis la Plaça de Sant Joan dans la ville basse) qui permet de monter directement sur la colline sans effort.", "rules": "Garez-vous sur la colline près du monument, mais ne laissez aucun objet de valeur visible."
+  },
+  {
+    "id": "rando-riglos-2",
+    "name": "Mallos de Riglos",
+    "category": "randonnees",
+    "lat": 42.3488, "lng": -0.7246,
+    "description": "Formations géologiques géantes de conglomérat rouge (jusqu'à 300m de haut). C'est le paradis de l'escalade et le royaume des vautours fauves.",
+    "recommendedTime": "3h (Rando Camino del Cielo)", "price": "Gratuit",
+    "tips": "Levez les yeux pour observer les ballets de vautours. Le parking à l'entrée du village est vite plein, arrivez tôt le matin.", "rules": "Zone de nidification très sensible, restez impérativement sur les sentiers balisés."
+  },
+  {
+    "id": "rando-ordesa",
+    "name": "Parc National d'Ordesa",
+    "category": "randonnees",
+    "lat": 42.6406, "lng": -0.0628,
+    "description": "L'un des parcs nationaux les plus spectaculaires d'Europe. Les falaises vertigineuses, les forêts de hêtres et les cascades rappellent les paysages nord-américains.",
+    "recommendedTime": "Journée entière", "price": "Gratuit (Navette payante l'été)",
+    "tips": "En haute saison (été/Pâques), la route est fermée. Garez le van au grand parking gratuit de Torla et prenez la navette obligatoire (environ 5€ A/R).", "rules": "Règles de Parc National : Chiens en laisse obligatoires, aucun drone, baignade interdite dans les rivières, bivouac interdit sous 2100m d'altitude."
+  },
+  {
+    "id": "act-gargas",
+    "name": "Grottes de Gargas",
+    "category": "activites",
+    "lat": 43.0560, "lng": 0.5360,
+    "description": "Un site préhistorique mondialement célèbre pour ses centaines d'empreintes de mains négatives (réalisées au pochoir) vieilles de 27 000 ans.",
+    "recommendedTime": "1h30", "price": "13€",
+    "tips": "La température intérieure est de 11°C toute l'année, prévoyez un bon pull même en plein mois d'août. Réservation OBLIGATOIRE à l'avance.", "rules": "Photos et vidéos strictement interdites à l'intérieur pour protéger les pigments millénaires."
   }
 ]
