@@ -1,0 +1,28 @@
+[
+  {
+    "id": "biv-1",
+    "name": "Mirador de Monegros",
+    "category": "bivouacs",
+    "lat": 41.6000,
+    "lng": -0.1500,
+    "description": "Superbe spot isolé dans le désert des Monegros. Terrain plat, coucher de soleil incroyable.",
+    "recommendedTime": "Nuit entière",
+    "price": "Gratuit",
+    "tips": "Attention au vent la nuit. Pas d'ombre en journée.",
+    "rules": "Feu strictement interdit. Remportez vos déchets. Tolérance 1 nuit max.",
+    "image": "assets/images/monegros.jpg"
+  },
+  {
+    "id": "biv-2",
+    "name": "Cap de Creus Nature",
+    "category": "bivouacs",
+    "lat": 42.3195,
+    "lng": 3.3204,
+    "description": "Spot discret près des criques. Accessible en van aménagé ou à pied.",
+    "recommendedTime": "Arriver après 20h",
+    "price": "Gratuit",
+    "tips": "Le parc naturel est très surveillé, restez très discrets et repliez tout à 7h du matin.",
+    "rules": "Parc National. Bivouac théoriquement interdit, tolérance si invisible et respectueux.",
+    "image": "assets/images/creus.jpg"
+  }
+]
