@@ -1,0 +1,28 @@
+[
+  {
+    "id": "park-1",
+    "name": "Parking Miramar (Montjuïc, Barcelone)",
+    "category": "parkings",
+    "lat": 41.3634,
+    "lng": 2.1526,
+    "description": "Un des rares spots où se garer gratuitement et en sécurité (relative) à Barcelone, sur la colline de Montjuïc.",
+    "recommendedTime": "Journée",
+    "price": "Gratuit",
+    "tips": "Idéal pour visiter Barcelone. Descendez en ville via le funiculaire ou à pied.",
+    "rules": "Ne laissez strictement RIEN de visible dans le véhicule (risque élevé de vol à Barcelone).",
+    "image": "assets/images/parking-bcn.jpg"
+  },
+  {
+    "id": "park-2",
+    "name": "Aire des Chalets (Gruissan)",
+    "category": "parkings",
+    "lat": 43.1030,
+    "lng": 3.0950,
+    "description": "Grand parking en terre près de la célèbre plage des chalets sur pilotis.",
+    "recommendedTime": "Étape de passage",
+    "price": "9€ / 24h (services inclus)",
+    "tips": "Borne de vidange et remplissage d'eau disponible. Très venté en cas de Tramontane.",
+    "rules": "Paiement par carte à la barrière automatique.",
+    "image": "assets/images/gruissan.jpg"
+  }
+]
