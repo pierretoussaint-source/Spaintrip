@@ -1,0 +1,337 @@
+/* ==========================================================================
+   Variables & Reset
+   ========================================================================== */
+:root {
+    /* Palette Naturelle - Mode Sombre par défaut */
+    --bg-main: #121212;
+    --bg-surface: #1E1E1E;
+    --bg-surface-elevated: #2C2C2C;
+    
+    --color-forest: #2d6a4f;
+    --color-forest-light: #40916c;
+    --color-blue: #0077b6;
+    --color-grey: #6c757d;
+    --color-grey-light: #adb5bd;
+    --color-white: #ffffff;
+    --color-text: #f8f9fa;
+    --color-text-muted: #ced4da;
+
+    --border-radius-lg: 20px;
+    --border-radius-md: 12px;
+    --border-radius-sm: 8px;
+    
+    --shadow-up: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-down: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    --header-height: 130px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--color-text);
+    overflow: hidden; /* Empêche le scroll global, la carte prend tout l'espace */
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height pour mobile */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.app-header {
+    background-color: var(--bg-surface);
+    z-index: 1000;
+    padding: 10px 0 0 0;
+    box-shadow: var(--shadow-down);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+.header-content h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-forest-light);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-btn {
+    background: var(--bg-surface-elevated);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-white);
+    transition: background var(--transition-speed);
+}
+
+.icon-btn:active {
+    background: var(--color-forest);
+}
+
+.search-container {
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-grey);
+    background-color: var(--bg-main);
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+#search-input::placeholder {
+    color: var(--color-grey-light);
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--color-forest-light);
+}
+
+/* Filters (Horizontal Scroll) */
+.filters-container {
+    overflow-x: auto;
+    padding: 0 15px 10px 15px;
+    scrollbar-width: none; /* Firefox */
+}
+
+.filters-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.filters-list {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    width: max-content;
+}
+
+.filter-chip {
+    background-color: var(--bg-surface-elevated);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all var(--transition-speed);
+    white-space: nowrap;
+}
+
+.filter-chip.active {
+    background-color: var(--color-forest-light);
+    color: var(--color-white);
+    border-color: var(--color-forest);
+}
+
+/* ==========================================================================
+   Map Container
+   ========================================================================== */
+#map {
+    flex-grow: 1;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Assombrir la carte OpenStreetMap pour matcher le mode sombre */
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+/* ==========================================================================
+   Distance Indicator (Floating)
+   ========================================================================== */
+.distance-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: var(--shadow-up);
+    transition: opacity var(--transition-speed);
+}
+
+.distance-indicator.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Bottom Sheet (POI Details)
+   ========================================================================== */
+.bottom-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-surface);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    box-shadow: var(--shadow-up);
+    z-index: 2000;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-sheet.open {
+    transform: translateY(0);
+}
+
+.sheet-handle {
+    width: 40px;
+    height: 4px;
+    background-color: var(--color-grey);
+    border-radius: 2px;
+    margin: 12px auto;
+}
+
+.sheet-content {
+    padding: 0 20px 20px 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.poi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.poi-header h2 {
+    font-size: 1.4rem;
+    color: var(--color-white);
+    margin-right: 10px;
+}
+
+.poi-badge {
+    background-color: var(--color-forest);
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.poi-image-container {
+    width: 100%;
+    height: 180px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: var(--bg-surface-elevated);
+}
+
+.poi-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.poi-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+}
+
+.poi-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: var(--bg-surface-elevated);
+    padding: 15px;
+    border-radius: var(--border-radius-md);
+}
+
+.meta-item {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.poi-section {
+    margin-bottom: 20px;
+}
+
+.poi-section h3 {
+    font-size: 1.1rem;
+    color: var(--color-forest-light);
+    margin-bottom: 8px;
+}
+
+.poi-section p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+.poi-section.hidden {
+    display: none;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background var(--transition-speed);
+}
+
+.btn-primary {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+}
+
+.btn-primary:active {
+    background-color: #005f8f;
+}
+
+.hidden {
+    display: none !important;
+}
