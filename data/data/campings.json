@@ -1,0 +1,15 @@
+[
+  {
+    "id": "camp-1",
+    "name": "Camping Sierra de Guara",
+    "category": "campings",
+    "lat": 42.1755,
+    "lng": 0.0264,
+    "description": "Camping familial idéal pour le canyoning. Douches chaudes et électricité.",
+    "recommendedTime": "2-3 jours",
+    "price": "25€ / nuit (2 pers + Van)",
+    "tips": "Réserver en avance en août. Demandez un emplacement près de la rivière.",
+    "rules": "Silence après 23h. Chiens en laisse.",
+    "image": "assets/images/guara.jpg"
+  }
+]
