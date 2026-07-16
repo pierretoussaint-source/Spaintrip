@@ -1,30 +1,22 @@
 /**
  * Roadtrip Explorer - Application Core
- * ES6 Vanilla JavaScript - Pas de dépendances (sauf Leaflet via CDN)
+ * ES6 Vanilla JavaScript - Sans framework
  */
 
 class RoadtripApp {
     constructor() {
-        // Configuration initiale
+        // Configuration de base
         this.config = {
-            mapCenter: [42.6, 1.8], // Centre approximatif du roadtrip (Pyrénées/Catalogne)
+            mapCenter: [42.6, 1.8], // Centre (Pyrénées / Catalogne)
             defaultZoom: 8,
             tileLayer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             tileOptions: {
                 maxZoom: 19,
                 attribution: '© OpenStreetMap contributors'
             },
-            // Fichiers de données à charger
-            dataSources: [
-                'data/bivouacs.json',
-                'data/campings.json',
-                'data/spots.json',
-                'data/baignades.json',
-                'data/restaurants.json',
-                'data/parkings.json',
-                'data/stations.json',
-                'data/supermarches.json'
-            ]
+            // Fichiers de données (Itinéraire + Fichier unique POIs)
+            routeSource: 'data/itineraire.json',
+            poiSource: 'data/pois.json'
         };
 
         // État de l'application
@@ -37,7 +29,7 @@ class RoadtripApp {
             currentFilter: 'all'
         };
 
-        // Mapping des catégories avec leurs emojis/couleurs
+        // Dictionnaire des catégories (Emojis et libellés)
         this.categoryIcons = {
             'bivouacs': '🏕️',
             'campings': '⛺',
@@ -67,14 +59,14 @@ class RoadtripApp {
     }
 
     /**
-     * Enregistre le Service Worker pour la PWA et le cache
+     * Enregistre le Service Worker (PWA & Mode Hors-ligne)
      */
     registerServiceWorker() {
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('service-worker.js')
-                    .then(reg => console.log('✅ Service Worker enregistré avec succès.', reg.scope))
-                    .catch(err => console.error('❌ Échec de l\'enregistrement du Service Worker:', err));
+                    .then(reg => console.log('✅ SW enregistré avec succès.', reg.scope))
+                    .catch(err => console.error('❌ Échec SW:', err));
             });
         }
     }
@@ -83,55 +75,43 @@ class RoadtripApp {
      * Initialise la carte Leaflet
      */
     initMap() {
-        // Création de la carte
         this.state.map = L.map('map', {
-            zoomControl: false // On désactive pour repositionner si besoin, ou pour le design mobile
+            zoomControl: false // Désactivé pour le design mobile, on le remet en bas
         }).setView(this.config.mapCenter, this.config.defaultZoom);
 
-        // Ajout du fond de carte OpenStreetMap
         L.tileLayer(this.config.tileLayer, this.config.tileOptions).addTo(this.state.map);
-
-        // Ajout des contrôles de zoom en bas à droite pour ne pas gêner le header
         L.control.zoom({ position: 'bottomright' }).addTo(this.state.map);
-
-        // Groupe de calques pour les marqueurs (permet de les vider facilement lors du filtrage)
+        
+        // Calque dédié aux marqueurs pour faciliter le nettoyage (filtres)
         this.state.markersLayer = L.featureGroup().addTo(this.state.map);
     }
 
     /**
-     * Charge tous les fichiers JSON en parallèle
+     * Charge l'itinéraire et les points d'intérêt depuis les JSON
      */
     async loadData() {
         try {
-            // 1. Charger l'itinéraire
-            const routeResponse = await fetch('data/itineraire.json');
-            if (routeResponse.ok) {
-                const routeData = await routeResponse.json();
+            // 1. Charger la polyligne de l'itinéraire
+            const routeRes = await fetch(this.config.routeSource);
+            if (routeRes.ok) {
+                const routeData = await routeRes.json();
                 this.drawRoute(routeData.coordinates);
             }
 
-            // 2. Charger tous les POIs
-            const fetchPromises = this.config.dataSources.map(url => 
-                fetch(url).then(res => res.ok ? res.json() : [])
-            );
-
-            const results = await Promise.all(fetchPromises);
-            
-            // Aplatir le tableau de tableaux en un seul tableau d'objets
-            this.state.allPOIs = results.flat();
-
-            // Afficher les marqueurs
-            this.renderMarkers(this.state.allPOIs);
+            // 2. Charger le fichier unique des POIs
+            const poiRes = await fetch(this.config.poiSource);
+            if (poiRes.ok) {
+                this.state.allPOIs = await poiRes.json();
+                this.renderMarkers(this.state.allPOIs);
+            }
             
         } catch (error) {
-            console.error("Erreur lors du chargement des données JSON:", error);
-            // Fallback UX : afficher un message d'erreur
-            alert("Impossible de charger les données. Vérifiez votre connexion.");
+            console.error("Erreur de chargement des données (hors-ligne ou fichier introuvable):", error);
         }
     }
 
     /**
-     * Dessine la polyligne du roadtrip sur la carte
+     * Dessine le tracé du roadtrip
      * @param {Array} coordinates - Tableau de [lat, lng]
      */
     drawRoute(coordinates) {
@@ -141,38 +121,37 @@ class RoadtripApp {
             color: '#2d6a4f', // Vert forêt
             weight: 4,
             opacity: 0.8,
-            dashArray: '10, 10', // Style pointillé pour le trajet
+            dashArray: '10, 10',
             lineJoin: 'round'
         }).addTo(this.state.map);
 
-        // Ajuster la vue pour voir tout le trajet au démarrage
+        // Recadrer la vue sur l'itinéraire complet au démarrage
         this.state.map.fitBounds(this.state.routeLayer.getBounds(), { padding: [50, 50] });
     }
 
     /**
-     * Affiche les marqueurs sur la carte selon les données filtrées
-     * @param {Array} pois - Liste des points d'intérêt
+     * Affiche les marqueurs sur la carte
+     * @param {Array} pois - Données à afficher
      */
     renderMarkers(pois) {
-        // Vider les anciens marqueurs
         this.state.markersLayer.clearLayers();
 
         pois.forEach(poi => {
-            // Création d'une icône customisée avec l'emoji correspondant
             const emoji = this.categoryIcons[poi.category] || '📍';
             
+            // Création du marqueur minimaliste (optimisé hors-ligne, sans images)
             const customIcon = L.divIcon({
                 className: 'custom-map-marker',
                 html: `<div style="background-color: #1E1E1E; border: 2px solid #2d6a4f; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.5);">${emoji}</div>`,
                 iconSize: [30, 30],
-                iconAnchor: [15, 15] // Centrer l'icône sur le point
+                iconAnchor: [15, 15]
             });
 
             const marker = L.marker([poi.lat, poi.lng], { icon: customIcon });
             
-            // Événement au clic sur un marqueur
             marker.on('click', () => {
                 this.openBottomSheet(poi);
+                // Animation fluide de la caméra vers le point cliqué
                 this.state.map.flyTo([poi.lat, poi.lng], 14, { duration: 0.5 });
             });
 
@@ -181,27 +160,22 @@ class RoadtripApp {
     }
 
     /**
-     * Gestion de l'interface utilisateur "Bottom Sheet"
+     * Ouvre et peuple le tiroir du bas (Bottom Sheet)
      */
     openBottomSheet(poi) {
         const sheet = document.getElementById('poi-bottom-sheet');
         
-        // Remplissage des données
+        // Remplissage texte
         document.getElementById('poi-title').textContent = poi.name;
         document.getElementById('poi-category').textContent = this.categoryIcons[poi.category] + " " + poi.category;
-        document.getElementById('poi-description').textContent = poi.description || "Aucune description disponible.";
+        document.getElementById('poi-description').textContent = poi.description || "Aucune description.";
         
-        // Image
-        const imgEl = document.getElementById('poi-image');
-        imgEl.src = poi.image || 'assets/images/placeholder.jpg';
-        imgEl.style.display = 'block';
-
         // Métadonnées
         document.getElementById('poi-time').textContent = poi.recommendedTime || "--";
         document.getElementById('poi-price').textContent = poi.price || "Gratuit";
         document.getElementById('poi-coords').textContent = `${poi.lat.toFixed(4)}, ${poi.lng.toFixed(4)}`;
 
-        // Sections conditionnelles (Conseils & Règles)
+        // Sections conditionnelles
         const tipsContainer = document.getElementById('poi-tips-container');
         if (poi.tips) {
             document.getElementById('poi-tips').textContent = poi.tips;
@@ -218,11 +192,9 @@ class RoadtripApp {
             rulesContainer.classList.add('hidden');
         }
 
-        // Lien Google Maps
-        const gmapsLink = document.getElementById('poi-gmaps-link');
-        gmapsLink.href = poi.gmapsUrl || `https://www.google.com/maps/search/?api=1&query=${poi.lat},${poi.lng}`;
+        // Génération du lien Google Maps
+        document.getElementById('poi-gmaps-link').href = `https://www.google.com/maps/search/?api=1&query=${poi.lat},${poi.lng}`;
 
-        // Afficher la Bottom Sheet
         sheet.classList.add('open');
     }
 
@@ -231,11 +203,11 @@ class RoadtripApp {
     }
 
     /**
-     * Géolocalisation de l'utilisateur
+     * Fonctionnalité GPS
      */
     locateUser() {
         if (!navigator.geolocation) {
-            alert("La géolocalisation n'est pas supportée par votre navigateur.");
+            alert("La géolocalisation n'est pas supportée.");
             return;
         }
 
@@ -244,7 +216,7 @@ class RoadtripApp {
                 const { latitude, longitude } = position.coords;
                 this.state.userLocation = [latitude, longitude];
 
-                // Afficher/Déplacer le marqueur utilisateur
+                // Marqueur utilisateur avec animation (Pulse)
                 if (!this.userMarker) {
                     const userIcon = L.divIcon({
                         className: 'user-marker',
@@ -261,18 +233,18 @@ class RoadtripApp {
                 this.calculateNextStopDistance(latitude, longitude);
             },
             (error) => {
-                console.error("Erreur de géolocalisation:", error);
-                alert("Impossible de vous localiser. Vérifiez vos permissions.");
+                console.error("Erreur GPS:", error);
+                alert("Géolocalisation impossible. Vérifiez vos permissions.");
             },
             { enableHighAccuracy: true }
         );
     }
 
     /**
-     * Math: Formule de Haversine pour calculer la distance entre deux coordonnées GPS
+     * Formule mathématique (Haversine) pour les distances GPS
      */
     calculateDistance(lat1, lon1, lat2, lon2) {
-        const R = 6371; // Rayon de la terre en km
+        const R = 6371; // Rayon de la Terre (km)
         const dLat = (lat2 - lat1) * Math.PI / 180;
         const dLon = (lon2 - lon1) * Math.PI / 180;
         const a = 
@@ -283,11 +255,12 @@ class RoadtripApp {
     }
 
     /**
-     * Trouve le prochain camping/bivouac et affiche la distance
+     * Trouve le prochain point de chute (camping/bivouac/parking)
      */
     calculateNextStopDistance(userLat, userLng) {
-        // Filtrer uniquement les lieux pour dormir
-        const sleepSpots = this.state.allPOIs.filter(poi => poi.category === 'campings' || poi.category === 'bivouacs');
+        const sleepSpots = this.state.allPOIs.filter(poi => 
+            ['campings', 'bivouacs', 'parkings'].includes(poi.category)
+        );
         
         if (sleepSpots.length === 0) return;
 
@@ -301,25 +274,21 @@ class RoadtripApp {
         });
 
         const indicator = document.getElementById('distance-indicator');
-        const distText = document.getElementById('next-stop-dist');
-        
-        distText.textContent = `${nearestDist.toFixed(1)} km`;
+        document.getElementById('next-stop-dist').textContent = `${nearestDist.toFixed(1)} km`;
         indicator.classList.remove('hidden');
     }
 
     /**
-     * Gestion des événements DOM
+     * Initialisation des écouteurs d'événements DOM
      */
     bindEvents() {
-        // Filtrage via les chips
+        // Filtrage Chips
         const filters = document.querySelectorAll('.filter-chip');
         filters.forEach(chip => {
             chip.addEventListener('click', (e) => {
-                // Gestion de la classe active
                 filters.forEach(f => f.classList.remove('active'));
                 e.target.classList.add('active');
 
-                // Filtrage des données
                 const filterValue = e.target.getAttribute('data-filter');
                 this.state.currentFilter = filterValue;
                 
@@ -329,11 +298,11 @@ class RoadtripApp {
                     const filtered = this.state.allPOIs.filter(poi => poi.category === filterValue);
                     this.renderMarkers(filtered);
                 }
-                this.closeBottomSheet(); // Fermer la modale si ouverte
+                this.closeBottomSheet();
             });
         });
 
-        // Recherche textuelle simple
+        // Recherche par texte
         const searchInput = document.getElementById('search-input');
         searchInput.addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
@@ -344,16 +313,13 @@ class RoadtripApp {
             this.renderMarkers(filtered);
         });
 
-        // Bouton de localisation
-        document.getElementById('btn-locate').addEventListener('click', () => {
-            this.locateUser();
-        });
-
-        // Fermer la bottom sheet en cliquant sur la carte ou en "tirant" la poignée
+        // Boutons et UI
+        document.getElementById('btn-locate').addEventListener('click', () => this.locateUser());
+        
         this.state.map.on('click', () => this.closeBottomSheet());
         document.querySelector('.sheet-handle').addEventListener('click', () => this.closeBottomSheet());
         
-        // Ajout d'une animation simple dans le CSS dynamiquement pour le marqueur GPS
+        // CSS injecté pour l'animation du point GPS
         const style = document.createElement('style');
         style.innerHTML = `
             @keyframes pulse {
@@ -366,7 +332,7 @@ class RoadtripApp {
     }
 }
 
-// Initialiser l'application quand le DOM est prêt
+// Lancement au chargement du DOM
 document.addEventListener('DOMContentLoaded', () => {
     window.app = new RoadtripApp();
 });
