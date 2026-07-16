@@ -476,5 +476,23 @@
     "description": "Lieu de partage des eaux du Canal du Midi. Idéal pour une pause bucolique avant le retour à Toulouse.",
     "recommendedTime": "1h", "price": "Gratuit",
     "tips": "Promenade relaxante à l'ombre des platanes géants. Achetez un cassoulet à Castelnaudary juste à côté.", "rules": "N/A"
+  },
+  {
+    "id": "act-ainsa",
+    "name": "Village Médiéval (Aínsa)",
+    "category": "activites",
+    "lat": 42.4165, "lng": 0.1373,
+    "description": "Classé parmi les plus beaux villages d'Espagne. Superbe Plaza Mayor fortifiée, ruelles pavées et vue sur les Pyrénées.",
+    "recommendedTime": "2h", "price": "Gratuit",
+    "tips": "Garez-vous sur le grand parking en terre situé juste derrière le château. Très spacieux et facile d'accès pour les vans.", "rules": "Centre historique 100% piéton."
+  },
+  {
+    "id": "act-seuvella",
+    "name": "Seu Vella (Lleida/Lérida)",
+    "category": "activites",
+    "lat": 41.6175, "lng": 0.6266,
+    "description": "Ancienne cathédrale majestueuse juchée sur une colline dominant toute la ville, mêlant architecture romane et cloître gothique spectaculaire.",
+    "recommendedTime": "1h30", "price": "7€",
+    "tips": "Il y a un ascenseur public gratuit (depuis la Plaça de Sant Joan dans la ville basse) qui permet de monter directement sur la colline sans effort.", "rules": "Garez-vous sur la colline près du monument, mais ne laissez aucun objet de valeur visible."
   }
 ]
