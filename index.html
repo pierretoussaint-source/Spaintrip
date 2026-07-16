@@ -5,34 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Roadtrip Explorer | Espagne & Sud de la France</title>
     
+    <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#121212">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="manifest" href="manifest.json">
     
+    <!-- Leaflet CSS (CDN) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- En-tête de l'application -->
     <header class="app-header">
         <div class="header-content">
             <h1>📍 Roadtrip Tracker</h1>
             <div class="header-actions">
                 <button id="btn-locate" class="icon-btn" aria-label="Me localiser">🎯</button>
-                <button id="btn-install" class="icon-btn hidden" aria-label="Installer l'application">📲</button>
             </div>
         </div>
         
+        <!-- Barre de recherche -->
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Rechercher un lieu, un spot...">
         </div>
 
+        <!-- Filtres horizontaux (Chips) -->
         <nav class="filters-container">
             <ul id="filters-list" class="filters-list">
                 <li class="filter-chip active" data-filter="all">Tout</li>
                 <li class="filter-chip" data-filter="bivouacs">🏕️ Bivouacs</li>
                 <li class="filter-chip" data-filter="campings">⛺ Campings</li>
+                <li class="filter-chip" data-filter="astuces">💡 Astuces & Airbnb</li>
+                <li class="filter-chip" data-filter="activites">🛶 Activités</li>
                 <li class="filter-chip" data-filter="points-de-vue">📸 Points de vue</li>
                 <li class="filter-chip" data-filter="randonnees">🥾 Randonnées</li>
                 <li class="filter-chip" data-filter="baignades">🏖 Baignades</li>
@@ -47,22 +54,21 @@
         </nav>
     </header>
 
+    <!-- Conteneur de la carte -->
     <main id="map"></main>
 
+    <!-- UI: Indicateur de distance -->
     <div id="distance-indicator" class="distance-indicator hidden">
         <span>Prochain stop : <strong id="next-stop-dist">-- km</strong></span>
     </div>
 
+    <!-- Bottom Sheet pour les détails du POI -->
     <aside id="poi-bottom-sheet" class="bottom-sheet">
         <div class="sheet-handle"></div>
         <div class="sheet-content">
             <div class="poi-header">
                 <h2 id="poi-title">Nom du Spot</h2>
                 <span id="poi-category" class="poi-badge">Catégorie</span>
-            </div>
-            
-            <div class="poi-image-container">
-                <img id="poi-image" src="assets/images/placeholder.jpg" alt="Vue du spot" onerror="this.style.display='none'">
             </div>
 
             <div class="poi-details">
@@ -80,7 +86,7 @@
                 </div>
 
                 <div id="poi-rules-container" class="poi-section hidden">
-                    <h3>⚠️ Règles (Bivouac/Nature)</h3>
+                    <h3>⚠️ Règles & Infos</h3>
                     <p id="poi-rules"></p>
                 </div>
 
@@ -93,7 +99,9 @@
         </div>
     </aside>
 
+    <!-- Leaflet JS (CDN) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Custom Logic -->
     <script type="module" src="script.js"></script>
 </body>
 </html>
