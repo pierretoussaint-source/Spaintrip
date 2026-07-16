@@ -522,4 +522,41 @@
     "recommendedTime": "1h30", "price": "13€",
     "tips": "La température intérieure est de 11°C toute l'année, prévoyez un bon pull même en plein mois d'août. Réservation OBLIGATOIRE à l'avance.", "rules": "Photos et vidéos strictement interdites à l'intérieur pour protéger les pigments millénaires."
   }
+,
+  {
+    "id": "camp-mascun",
+    "name": "Camping Mascún (Rodellar)",
+    "category": "campings",
+    "lat": 42.2811, "lng": -0.0766,
+    "description": "Perché au bout de la vallée, c'est le camp de base mythique pour explorer le canyon du Mascún. Ambiance très sportive et nature.",
+    "recommendedTime": "2 nuits", "price": "Environ 22€",
+    "tips": "La route pour y accéder est spectaculaire mais sinueuse, prenez votre temps. Bar sympa sur place avec ambiance grimpeurs.", "rules": "Réservez à l'avance en été, il est souvent complet."
+  },
+  {
+    "id": "camp-riovero",
+    "name": "Camping Río Vero (Alquézar)",
+    "category": "campings",
+    "lat": 42.1685, "lng": 0.0163,
+    "description": "Situé sur la route juste avant Alquézar, très boisé. Il offre un accès direct à des spots de baignade sur le Rio Vero.",
+    "recommendedTime": "Nuit", "price": "Environ 26€",
+    "tips": "Pratique si le camping Alquézar (plus haut) est complet. Supermarché d'appoint sur place.", "rules": "N/A"
+  },
+  {
+    "id": "camp-panzano",
+    "name": "Camping Cañones de Guara y Formiga (Panzano)",
+    "category": "campings",
+    "lat": 42.2045, "lng": -0.1112,
+    "description": "Petit camping très tranquille et moins connu, idéalement situé si vous prévoyez de faire le canyon du Formiga le lendemain matin.",
+    "recommendedTime": "Nuit", "price": "20€",
+    "tips": "Moins bondé que les campings autour d'Alquézar. Ombre abondante.", "rules": "Silence respecté très tôt le soir."
+  },
+  {
+    "id": "camp-ager",
+    "name": "Camping Vall d'Àger (Catalogne)",
+    "category": "campings",
+    "lat": 42.0006, "lng": 0.7634,
+    "description": "Situé dans la vallée d'Àger (près des gorges de Mont-rebei). La zone est classée réserve Starlight pour la pureté de son ciel nocturne.",
+    "recommendedTime": "Nuit", "price": "24€",
+    "tips": "Ne manquez pas de lever les yeux la nuit ou de visiter l'Observatoire Astronomique du Montsec à proximité.", "rules": "Limitez vos lumières extérieures la nuit."
+  }
 ]
