@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Roadtrip Explorer | Espagne & Sud de la France</title>
+    
+    <meta name="theme-color" content="#121212">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <h1>📍 Roadtrip Tracker</h1>
+            <div class="header-actions">
+                <button id="btn-locate" class="icon-btn" aria-label="Me localiser">🎯</button>
+                <button id="btn-install" class="icon-btn hidden" aria-label="Installer l'application">📲</button>
+            </div>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Rechercher un lieu, un spot...">
+        </div>
+
+        <nav class="filters-container">
+            <ul id="filters-list" class="filters-list">
+                <li class="filter-chip active" data-filter="all">Tout</li>
+                <li class="filter-chip" data-filter="bivouacs">🏕️ Bivouacs</li>
+                <li class="filter-chip" data-filter="campings">⛺ Campings</li>
+                <li class="filter-chip" data-filter="points-de-vue">📸 Points de vue</li>
+                <li class="filter-chip" data-filter="randonnees">🥾 Randonnées</li>
+                <li class="filter-chip" data-filter="baignades">🏖 Baignades</li>
+                <li class="filter-chip" data-filter="eau">💧 Eau potable</li>
+                <li class="filter-chip" data-filter="douches">🚿 Douches</li>
+                <li class="filter-chip" data-filter="toilettes">🚻 Toilettes</li>
+                <li class="filter-chip" data-filter="stations">⛽ Stations</li>
+                <li class="filter-chip" data-filter="supermarches">🛒 Supermarchés</li>
+                <li class="filter-chip" data-filter="restaurants">🍴 Restaurants</li>
+                <li class="filter-chip" data-filter="parkings">🚐 Parkings</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="map"></main>
+
+    <div id="distance-indicator" class="distance-indicator hidden">
+        <span>Prochain stop : <strong id="next-stop-dist">-- km</strong></span>
+    </div>
+
+    <aside id="poi-bottom-sheet" class="bottom-sheet">
+        <div class="sheet-handle"></div>
+        <div class="sheet-content">
+            <div class="poi-header">
+                <h2 id="poi-title">Nom du Spot</h2>
+                <span id="poi-category" class="poi-badge">Catégorie</span>
+            </div>
+            
+            <div class="poi-image-container">
+                <img id="poi-image" src="assets/images/placeholder.jpg" alt="Vue du spot" onerror="this.style.display='none'">
+            </div>
+
+            <div class="poi-details">
+                <p id="poi-description" class="poi-desc">Description du lieu...</p>
+                
+                <div class="poi-meta">
+                    <div class="meta-item">⏱️ <span id="poi-time">Temps conseillé</span></div>
+                    <div class="meta-item">💶 <span id="poi-price">Prix</span></div>
+                    <div class="meta-item">📍 <span id="poi-coords">GPS</span></div>
+                </div>
+
+                <div id="poi-tips-container" class="poi-section hidden">
+                    <h3>💡 Conseils</h3>
+                    <p id="poi-tips"></p>
+                </div>
+
+                <div id="poi-rules-container" class="poi-section hidden">
+                    <h3>⚠️ Règles (Bivouac/Nature)</h3>
+                    <p id="poi-rules"></p>
+                </div>
+
+                <div class="poi-actions">
+                    <a id="poi-gmaps-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Ouvrir dans Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
